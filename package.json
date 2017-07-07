@@ -1,0 +1,16 @@
+{
+  "name": "angular-todo-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Nhan",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "browser-sync": "^2.18.12",
+    "gulp-connect": "^5.0.0"
+  }
+}

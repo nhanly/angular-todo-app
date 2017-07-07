@@ -1,0 +1,70 @@
+/* Common class */
+.align-middle {
+    display: inline-block;
+    vertical-align: middle;
+}
+/* End Common class */
+
+/* Page main wrapper*/
+.main-wrapper {
+    margin: 50px;
+}
+
+.todo-container {
+    max-height: 400px;
+    width: 400px;
+    border: 1px solid #b9b9b9;
+    overflow-y: auto;
+}
+/* End Page main wrapper*/
+
+/* Header */
+.header-container {
+    padding-left: 30px;
+    margin-bottom: -20px;
+}
+
+input.new-item {
+    padding-top: 10px;
+    border: none;
+    width: 270px;
+    height: 60px;
+    padding: 3px;
+}
+
+input.new-item:focus, input.new-item:hover, 
+input.new-item:active, input.new-item {
+    border: none;
+    outline: none;
+}
+/* End Header */
+
+/* Main body */
+.main-container {
+    margin-left: -15px;
+}
+
+ul.list-none-style {
+    list-style: none;
+}
+
+.todo-list-item {
+    height: 40px;
+    padding: 3px 5px;
+}
+
+.delete-icon {
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.delete-all  {
+    margin: 10px;
+}
+
+a.delete-all {
+    cursor: pointer;
+}
+/* End Main body */
+
+

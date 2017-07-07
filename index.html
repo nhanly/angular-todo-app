@@ -1,0 +1,44 @@
+<!doctype html>
+<html ng-app="todoApp">
+  <head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="app/main.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/main.css">
+  </head>
+  <body class="main-wrapper">
+    <h2>Todos</h2>
+    <div class="todo-container" ng-controller="TodoController as todoCtrl">
+        <header>
+            <div class="header-container">
+                <input type="checkbox" ng-click="todoCtrl.checkAll();" ng-model="todoCtrl.allChecked" >
+                <input autofocus ng-model="todoCtrl.todoText" class="new-item" placeholder="What needs to be done?" ng-keydown="todoCtrl.handleEvent($event);">
+            </div>
+        </header>
+        <hr>
+        <section class="main-container">
+            <ul class="list-none-style">
+                <li class="todo-list-item " ng-repeat="item in todoCtrl.listTodos">
+                    <div class="view" ng-mouseover="item.canDelete = true" ng-mouseleave="item.canDelete = false;">
+                        <input class="toggle" type="checkbox" ng-click="todoCtrl.selectTodo($index);" ng-checked="todoCtrl.allChecked">
+                        <label>{{item.text}}</label>
+                        <span class="align-middle pull-right" ng-if="item.canDelete">
+                            <i class="delete-icon text-danger fa fa-times fa-lg" 
+                            ng-click="todoCtrl.deleteTodo($index)"></i>
+                        </span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <footer>
+            <div class="footer">
+                <a class="delete-all pull-right " ng-if="todoCtrl.allChecked" ng-click="todoCtrl.deleteAll();">Delete selected</button>
+                <a class="delete-all pull-right " ng-if="todoCtrl.canDelete" ng-click="todoCtrl.deleteSelected();">Delete selected</button>
+            </div>
+        </footer>
+    </div>
+  </body>
+</html>
